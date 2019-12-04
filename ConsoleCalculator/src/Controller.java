@@ -26,13 +26,23 @@ public class Controller {
             }
 
             if (oper.equalsIgnoreCase("+")){
-                System.out.print(Number.Add(num1,num2));
+                if (ArabicNumbers.checkStr(str)){
+                    System.out.println(Number.Add(num1,num2));
+                } else System.out.print(RomanNumbers.generateNum(Number.Add(num1,num2)));
+
             } else if (oper.equalsIgnoreCase("-")){
-                System.out.print(Number.Sub(num1,num2));
+                if (ArabicNumbers.checkStr(str)){
+                    System.out.println(Number.Sub(num1,num2));
+                } else System.out.print(RomanNumbers.generateNum(Number.Sub(num1,num2)));
+
             } else if (oper.equalsIgnoreCase("*")){
-                System.out.print(Number.Mul(num1,num2));
+                if (ArabicNumbers.checkStr(str)){
+                    System.out.println(Number.Mul(num1,num2));
+                } else System.out.print(RomanNumbers.generateNum(Number.Mul(num1,num2)));
             } else if (oper.equalsIgnoreCase("/")){
-                System.out.print(Number.Div(num1,num2));
+                if (ArabicNumbers.checkStr(str)){
+                    System.out.println(Number.Div(num1,num2));
+                } else System.out.print(RomanNumbers.generateNum(Number.Div(num1,num2)));
             }
 
 
@@ -48,3 +58,4 @@ public class Controller {
         parseStr(example);
     }
 }
+

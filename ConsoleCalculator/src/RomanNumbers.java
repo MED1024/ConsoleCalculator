@@ -1,5 +1,3 @@
-import javax.print.DocFlavor;
-
 public class RomanNumbers extends Number {
 
 
@@ -40,6 +38,67 @@ public class RomanNumbers extends Number {
                 return -1;
         }
         return num1;
+    }
+
+    public static String getRomNum(int num){
+        switch (num){
+            case 1:
+                return "I";
+            case 2:
+                return "II";
+            case 3:
+                return "III";
+            case 4:
+                return "IV";
+            case 5:
+                return "V";
+            case 6:
+                return "VI";
+            case 7:
+                return "VII";
+            case 8:
+                return "VIII";
+            case 9:
+                return "IX";
+            default:
+                return "";
+        }
+    }
+
+
+    public static String generateNum(int num){
+        String romNum="";
+        int r1=100;
+        int r2=50;
+
+        if (num==r1) return "C";
+        else if (num>=90) {
+            romNum = romNum + "XC";
+            romNum = romNum + getRomNum(num % 10);
+            return romNum;
+        } else if (num>=50) {
+            romNum=romNum+"L";
+            num=num-50;
+            while (num>=10){
+                num=num-10;
+                romNum=romNum+"X";
+            }
+            romNum = romNum + getRomNum(num % 10);
+            return romNum;
+        } else if (num>=40){
+            romNum = romNum + "XL";
+            romNum = romNum + getRomNum(num % 10);
+            return romNum;
+        } else {
+            while (num>=10){
+                num=num-10;
+                romNum=romNum+"X";
+            }
+            romNum = romNum + getRomNum(num % 10);
+            return romNum;
+        }
+
+
     }
 
 
@@ -98,3 +157,4 @@ public class RomanNumbers extends Number {
     }
 
 }
+
